@@ -1,8 +1,8 @@
 /* Estilos Generales y Tipografía */
 body {
-    font-family: 'Merriweather', serif; /* Fuente tipo periódico */
-    background-color: #fdfaf4; /* Un blanco "cálido" o de papel */
-    color: #333; /* Color de texto principal (gris oscuro) */
+    font-family: 'Merriweather', serif;
+    background-color: #fdfaf4;
+    color: #333;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -12,17 +12,15 @@ body {
 .main-header {
     text-align: center;
     padding: 20px 10px;
-    border-bottom: 4px double #000; /* Doble línea clásica de periódico */
+    border-bottom: 4px double #000;
     margin: 0 auto;
     max-width: 900px;
 }
-
 .main-header h1 {
-    font-size: 3.5em; /* Título grande */
+    font-size: 3.5em;
     margin: 0;
     color: #000;
 }
-
 .main-header p {
     font-size: 1.2em;
     margin: 5px 0 0;
@@ -32,14 +30,13 @@ body {
 /* Navegación / Botones de Sección */
 .main-nav {
     display: flex;
-    flex-wrap: wrap; /* Para que se vea bien en móviles */
+    flex-wrap: wrap;
     justify-content: center;
     background-color: #eee;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
 }
-
 .nav-button {
     font-family: 'Merriweather', serif;
     background-color: transparent;
@@ -49,15 +46,12 @@ body {
     cursor: pointer;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
-    text-transform: uppercase; /* Estilo de sección */
+    text-transform: uppercase;
     font-weight: 700;
 }
-
 .nav-button:hover {
     background-color: #ddd;
 }
-
-/* Estilo del botón ACTIVO (el que está seleccionado) */
 .nav-button.active {
     background-color: #333;
     color: #fff;
@@ -73,14 +67,11 @@ body {
 /* Todas las secciones de contenido */
 .content-section {
     display: none; /* Ocultas por defecto */
-    animation: fadeIn 0.5s; /* Animación de aparición */
+    animation: fadeIn 0.5s;
 }
-
-/* La sección ACTIVA (la que debe mostrarse) */
 .content-section.active {
     display: block; /* Se muestra */
 }
-
 .content-section h2 {
     font-size: 2.5em;
     color: #000;
@@ -88,7 +79,6 @@ body {
     padding-bottom: 5px;
     margin-top: 0;
 }
-
 .content-section h3 {
     font-size: 1.8em;
     color: #222;
@@ -96,13 +86,11 @@ body {
 
 /* Columnas tipo periódico */
 .content-section article {
-    /* En pantallas grandes, usamos 2 columnas */
     column-count: 2;
     column-gap: 25px;
 }
-
 .content-section article p {
-    text-align: justify; /* Justificado, muy importante para el look de periódico */
+    text-align: justify;
     margin-top: 0;
 }
 
@@ -133,36 +121,114 @@ body {
     to { opacity: 1; }
 }
 
-
-/* ---- NUEVOS ESTILOS PARA EL QR ---- */
-
+/* ---- ESTILOS DEL QR ---- */
 .qr-container {
-    text-align: center; /* Centra el QR y el texto */
-    margin: 25px 0; /* Espaciado superior e inferior */
+    text-align: center;
+    margin: 25px 0;
     padding: 15px;
-    background-color: #f5f5f5; /* Un fondo ligeramente distinto para resaltarlo */
-    border: 1px dashed #ccc; /* Borde punteado para darle un toque "informativo" */
-    border-radius: 8px; /* Bordes ligeramente redondeados */
-    /* Intenta que el contenedor no se parta entre las dos columnas */
+    background-color: #f5f5f5;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
     break-inside: avoid-column; 
 }
-
 .qr-container p {
     font-size: 1.1em;
     font-weight: bold;
     color: #555;
     margin-bottom: 15px;
-    text-align: center; /* Asegura que el texto esté centrado */
+    text-align: center;
 }
-
 .qr-container img {
-    max-width: 200px; /* Un tamaño razonable para el QR */
+    max-width: 200px;
     width: 100%;
     height: auto;
     border: 1px solid #999;
     padding: 4px;
-    background: #fff; /* Fondo blanco por si el QR es transparente */
-    margin: 0 auto; /* Centra la imagen */
+    background: #fff;
+    margin: 0 auto;
+}
+
+/* ---- ESTILOS: REPORTAJES ---- */
+#reportajes article {
+    column-count: 1;
+}
+.reportaje-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+.reportaje-item h3 {
+    margin-top: 0;
+}
+.reportaje-autor {
+    font-style: italic;
+    font-weight: bold;
+    color: #555;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+    margin-bottom: 15px;
+    text-align: left !important;
+}
+.reportaje-item p {
+    text-align: justify;
+}
+
+/* ---- ESTILOS: PROMO ---- */
+#promo article {
+    column-count: 1;
+}
+.dato-curioso {
+    background-color: #fff8e1;
+    border-left: 5px solid #ffc107;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.dato-curioso p {
+    text-align: left !important;
+}
+
+/* ---- NUEVOS ESTILOS: GALERÍA DE VIDEO ---- */
+/* Reemplaza el .video-placeholder anterior */
+.video-gallery {
+    margin-top: 30px;
+    border-top: 2px solid #aaa;
+    padding-top: 20px;
+    /* Cuadrícula de videos: se ajusta automáticamente */
+    display: grid;
+    /* Crea columnas de mínimo 300px, y las ajusta al espacio */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Espacio entre los videos */
+}
+.video-gallery h4 {
+    font-size: 1.5em;
+    color: #333;
+    /* Hace que el título ocupe todas las columnas */
+    grid-column: 1 / -1; 
+    margin: 0 0 10px 0;
+    text-align: left !important;
+}
+.video-item {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.video-item p {
+    font-weight: bold;
+    text-align: left !important;
+    color: #444;
+    margin: 0 0 10px 0;
+}
+.video-item video {
+    width: 100%; /* Hace el video responsivo */
+    height: auto;
+    border-radius: 4px;
+    background-color: #000; /* Fondo negro mientras carga */
 }
 
 
@@ -171,13 +237,14 @@ body {
     .main-header h1 {
         font-size: 2.5em;
     }
-
-    /* En móviles, quitamos las columnas */
     .content-section article {
         column-count: 1;
     }
-
     .main-nav {
-        flex-direction: column; /* Botones uno debajo del otro */
+        flex-direction: column;
+    }
+    /* Hacemos que la cuadrícula de video sea de 1 columna en móviles */
+    .video-gallery {
+         grid-template-columns: 1fr;
     }
 }
