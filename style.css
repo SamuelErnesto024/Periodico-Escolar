@@ -22,7 +22,7 @@ body {
 }
 
 /* ========================================= */
-/* --- NUEVOS ESTILOS: SPLASH SCREEN --- */
+/* --- SPLASH SCREEN --- */
 /* ========================================= */
 #splash-screen {
     position: fixed;
@@ -32,13 +32,13 @@ body {
     height: 100%;
     background-color: var(--primary-color); 
     color: white;
-    z-index: 9999; /* Asegura que esté por encima de todo */
+    z-index: 9999; 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     opacity: 1;
-    transition: opacity 0.8s ease-in-out; /* Transición de salida */
+    transition: opacity 0.8s ease-in-out; 
 }
 
 .splash-content {
@@ -186,17 +186,19 @@ body {
     font-size: 0.95em;
     text-transform: uppercase;
     cursor: pointer;
-    /* Transición suave para color, fondo y movimiento */
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
 }
 
 /* Efecto HOVER (Cuando pasas el mouse) */
 .nav-button:hover {
-    background-color: var(--hover-color); /* El color elegido: Rojo Vibrante */
+    background-color: var(--hover-color); 
     color: #fff;
-    transform: translateY(-3px) scale(1.05); /* Se levanta y crece un poco */
-    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); /* Sombra resplandeciente del mismo color */
+    transform: translateY(-3px) scale(1.05); 
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); 
     z-index: 2;
 }
 
@@ -210,8 +212,29 @@ body {
     background-color: var(--accent-color);
 }
 .nav-button.highlight:hover {
-    background-color: #ff5733; /* Un naranja más brillante para los destacados */
+    background-color: #ff5733; 
 }
+
+/* Botón de Lanzamiento del Juego dentro de la sección Pi Snake */
+.pi-snake-launch-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #2ecc71; /* Verde esmeralda */
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(46, 204, 113, 0.4);
+    text-transform: uppercase;
+}
+.pi-snake-launch-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(46, 204, 113, 0.6);
+}
+
 
 /* --- CONTENIDO PRINCIPAL Y TRANSICIONES --- */
 .content-area {
@@ -231,17 +254,43 @@ body {
 }
 
 /* ANIMACIÓN 1: El Título entra desde la izquierda */
+@keyframes slideInLeft {
+    from { 
+        opacity: 0; 
+        transform: translateX(-50px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
 .content-section.active h2 {
     animation: slideInLeft 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
 /* ANIMACIÓN 2: La tarjeta entra desde abajo con rebote y blur */
+@keyframes slideInUpBlur {
+    from { 
+        opacity: 0; 
+        transform: translateY(40px) scale(0.98);
+        filter: blur(5px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+        filter: blur(0); 
+    }
+}
 .content-section.active article, 
 .content-section.active .grid-container {
     animation: slideInUpBlur 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.2s both; /* 0.2s de retraso */
 }
 
 /* Hero Banner (Solo Inicio) */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
 .hero-banner {
     background: linear-gradient(rgba(26, 37, 48, 0.8), rgba(26, 37, 48, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
@@ -298,6 +347,11 @@ body {
     text-align: justify;
     font-size: 1.15em;
     color: #4a5568;
+}
+.news-card p.lead-text {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 /* Cajas destacadas */
@@ -373,7 +427,6 @@ body {
     color: #7f8c8d;
     font-style: italic;
     margin-bottom: 5px; 
-    border-bottom: none; 
     padding-bottom: 0;
 }
 
@@ -405,6 +458,34 @@ body {
 
 .read-more-btn {
     display: none; 
+}
+
+/* --- GALERÍA DE IMÁGENES DENTRO DEL ARTÍCULO (4TO SECUNDARIA) --- */
+.image-gallery {
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+.image-gallery h4 {
+    font-family: var(--font-title);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: 20px;
+}
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    object-fit: cover; 
+}
+.gallery-image:hover {
+    transform: scale(1.05);
 }
 
 
@@ -504,52 +585,7 @@ body {
     display: block;
     margin-top: 5px;
 }
-
-/* --- KEYFRAMES (LAS ANIMACIONES) --- */
-
-/* Keyframe para la entrada del Splash Screen */
-@keyframes fadeScaleIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Fade In + Escalar (Para el Banner) */
-@keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* Deslizar desde la izquierda (Títulos) */
-@keyframes slideInLeft {
-    from { 
-        opacity: 0; 
-        transform: translateX(-50px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateX(0); 
-    }
-}
-
-/* Deslizar desde abajo + Blur (Contenido) */
-@keyframes slideInUpBlur {
-    from { 
-        opacity: 0; 
-        transform: translateY(40px) scale(0.98);
-        filter: blur(5px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0) scale(1);
-        filter: blur(0); 
-    }
-}
+/* --- FIN KEYFRAMES (LAS ANIMACIONES) --- */
 
 /* Responsividad */
 @media (max-width: 768px) {
@@ -567,4 +603,10 @@ body {
     .nav-button { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .news-card { padding: 25px; }
     .header-top-line { flex-direction: column; gap: 5px; }
+    
+    /* Para el móvil, hacemos los botones de juego más visibles */
+    .pi-snake-launch-btn {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
 }

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Pi Snake</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #282c34;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            color: #61dafb;
+        }
+        canvas {
+            background: #1e1e1e;
+            display: block;
+            margin: auto;
+            border: 4px solid #61dafb;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(97, 218, 251, 0.7);
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de la Serpiente de Pi</h1>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <p>Controla el símbolo de π y hazlo crecer con cada número.</p>
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        const gridSize = 20;
+        let piDigits = "14159265358979323846";
+        let piIndex = 0;
+        let snake = [{ x: 200, y: 200 }];
+        let direction = { x: gridSize, y: 0 };
+        let food = generateFood();
+        let speed = 200;
+        let gameInterval;
+
+        document.addEventListener("keydown", changeDirection);
+        startGame();
+
+        function startGame() {
+            gameInterval = setInterval(updateGame, speed);
+        }
+
+        function updateGame() {
+            let head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+            
+            // Traspaso de paredes
+            if (head.x < 0) head.x = canvas.width - gridSize;
+            if (head.x >= canvas.width) head.x = 0;
+            if (head.y < 0) head.y = canvas.height - gridSize;
+            if (head.y >= canvas.height) head.y = 0;
+            
+            snake.unshift(head);
+            
+            if (head.x === food.x && head.y === food.y) {
+                piIndex++;
+                food = generateFood();
+                speed = Math.max(50, speed - 5); // Aumento progresivo de velocidad
+                clearInterval(gameInterval);
+                gameInterval = setInterval(updateGame, speed);
+            } else {
+                snake.pop();
+            }
+            
+            if (checkCollision(head)) {
+                resetGame();
+            }
+            
+            drawGame();
+        }
+
+        function drawGame() {
+            ctx.fillStyle = "#1e1e1e";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = "#61dafb";
+            ctx.font = "16px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            
+            snake.forEach((segment, index) => {
+                ctx.fillText(index === 0 ? "π" : piDigits[(index - 1) % piDigits.length], segment.x + 10, segment.y + 10);
+                ctx.strokeStyle = "#fff";
+                ctx.strokeRect(segment.x, segment.y, gridSize, gridSize);
+            });
+            
+            ctx.fillStyle = "red";
+            ctx.font = "bold 18px Arial";
+            ctx.fillText(piDigits[piIndex % piDigits.length], food.x + 10, food.y + 15);
+        }
+
+        function generateFood() {
+            return {
+                x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
+                y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
+            };
+        }
+
+        function changeDirection(event) {
+            const key = event.key;
+            if (key === "ArrowUp" && direction.y === 0) {
+                direction = { x: 0, y: -gridSize };
+            } else if (key === "ArrowDown" && direction.y === 0) {
+                direction = { x: 0, y: gridSize };
+            } else if (key === "ArrowLeft" && direction.x === 0) {
+                direction = { x: -gridSize, y: 0 };
+            } else if (key === "ArrowRight" && direction.x === 0) {
+                direction = { x: gridSize, y: 0 };
+            }
+        }
+
+        function checkCollision(head) {
+            return snake.some((seg, i) => i !== 0 && seg.x === head.x && seg.y === head.y);
+        }
+
+        function resetGame() {
+            clearInterval(gameInterval);
+            snake = [{ x: 200, y: 200 }];
+            direction = { x: gridSize, y: 0 };
+            piIndex = 0;
+            speed = 200;
+            food = generateFood();
+            startGame();
+        }
+    </script>
+</body>
+</html>
