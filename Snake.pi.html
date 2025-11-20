@@ -25,13 +25,55 @@
         }
         p {
             font-size: 18px;
+            margin-bottom: 20px;
         }
+        
+        /* Estilos para los controles en pantalla (móvil) */
+        #controls {
+            display: grid;
+            grid-template-areas:
+                ". up ."
+                "left . right"
+                ". down .";
+            width: 200px;
+            height: 200px;
+            margin: 20px auto 0;
+            /* Solo visible en pantallas táctiles o si es necesario */
+        }
+        .control-button {
+            background-color: #61dafb;
+            color: #282c34;
+            border: none;
+            padding: 15px 0;
+            margin: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.1s;
+            user-select: none; /* Evita que el texto sea seleccionado */
+        }
+        .control-button:active {
+            background-color: #3b9dbf;
+        }
+        #up { grid-area: up; }
+        #down { grid-area: down; }
+        #left { grid-area: left; }
+        #right { grid-area: right; }
     </style>
 </head>
 <body>
     <h1>Juego de la Serpiente de Pi</h1>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
     <p>Controla el símbolo de π y hazlo crecer con cada número.</p>
+
+    <div id="controls">
+        <button id="up" class="control-button" data-direction="ArrowUp">▲</button>
+        <button id="left" class="control-button" data-direction="ArrowLeft">◄</button>
+        <button id="right" class="control-button" data-direction="ArrowRight">►</button>
+        <button id="down" class="control-button" data-direction="ArrowDown">▼</button>
+    </div>
+
     <script>
         const canvas = document.getElementById("gameCanvas");
         const ctx = canvas.getContext("2d");
@@ -44,7 +86,15 @@
         let speed = 200;
         let gameInterval;
 
+        // **Parte nueva:** Manejo de eventos de teclado y toque/clic
         document.addEventListener("keydown", changeDirection);
+        
+        // Asignar eventos de clic a los botones
+        document.querySelectorAll('.control-button').forEach(button => {
+            button.addEventListener('click', handleButtonClick);
+        });
+        // **Fin de parte nueva**
+
         startGame();
 
         function startGame() {
@@ -100,10 +150,14 @@
         }
 
         function generateFood() {
-            return {
-                x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
-                y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
-            };
+            let newFood;
+            do {
+                newFood = {
+                    x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
+                    y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
+                };
+            } while (snake.some(segment => segment.x === newFood.x && segment.y === newFood.y)); // Evita que la comida aparezca en la serpiente
+            return newFood;
         }
 
         function changeDirection(event) {
@@ -118,6 +172,14 @@
                 direction = { x: gridSize, y: 0 };
             }
         }
+        
+        // **Parte nueva:** Función para manejar el clic en los botones
+        function handleButtonClick(event) {
+            const key = event.currentTarget.dataset.direction;
+            // Simulamos el evento de teclado para reutilizar la lógica de changeDirection
+            changeDirection({ key: key });
+        }
+        // **Fin de parte nueva**
 
         function checkCollision(head) {
             return snake.some((seg, i) => i !== 0 && seg.x === head.x && seg.y === head.y);
