@@ -3,100 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Heraldo Técnico - Periódico Escolar</title>
+    <title>El Heraldo Técnico - Politécnico Fundación MIR Max Simón</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div id="splash-screen">
+        <div class="splash-content">
+            <p class="splash-pretitle">Politécnico Fundación MIR Max Simón</p>
+            <h1 class="splash-title">El Heraldo Técnico</h1>
+            <p class="splash-subtitle">Edición Digital 2025: Innovación y Liderazgo</p>
+            <button id="enter-button" class="splash-button">Explorar Periódico</button>
+            <p class="splash-footer">Diseñado por 6to E, Informática</p>
+        </div>
+    </div>
+
     <header class="main-header">
+        <div class="header-top-line">
+            <span>Edición Digital 2025</span>
+            <span>Santo Domingo, R.D.</span>
+        </div>
         <h1>El Heraldo Técnico</h1>
-        <p>El Boletín Oficial de Nuestra Escuela</p>
+        <p class="sub-header">La Voz del Politécnico Fundación MIR Max Simón</p>
+        <div class="header-bottom-line"></div>
     </header>
 
     <nav class="main-nav">
-        <button class="nav-button active" data-target="inicio">Inicio</button>
-        <button class="nav-button" data-target="informatica">Informática</button>
-        <button class="nav-button" data-target="hoteleria">Hotelería</button>
-        <button class="nav-button" data-target="gastronomia">Gastronomía</button>
-        <button class="nav-button" data-target="agropecuaria">Agropecuaria</button>
-        <button class="nav-button" data-target="mecanica">Mecánica</button>
-        <button class="nav-button" data-target="enfermeria">Enfermería</button>
+        <div class="nav-container">
+            <button class="nav-button active" data-target="inicio">Inicio</button>
+            <button class="nav-button" data-target="informatica">Informática</button>
+            <button class="nav-button" data-target="hoteleria">Hotelería</button>
+            <button class="nav-button" data-target="gastronomia">Gastronomía</button>
+            <button class="nav-button" data-target="agropecuaria">Agropecuaria</button>
+            <button class="nav-button" data-target="mecanica">Mecánica</button>
+            <button class="nav-button" data-target="enfermeria">Enfermería</button>
+            <button class="nav-button highlight" data-target="reportajes">Reportajes LE</button>
+            <button class="nav-button highlight" data-target="pi-snake">Día Pi Snake 🐍</button>
+            <button class="nav-button highlight" data-target="promo">Promo ASTHERM</button>
+        </div>
     </nav>
 
     <main class="content-area">
 
         <section id="inicio" class="content-section active">
-            <h2>Bienvenidos a la Edición Digital</h2>
-            <article>
-                <p>¡Les damos la más cordial bienvenida a "El Heraldo Técnico"! Este espacio digital nace con el propósito de informar, conectar y celebrar los logros de todas las áreas técnicas de nuestra institución. Aquí encontrarás las últimas noticias, proyectos innovadores y eventos destacados.</p>
-                <p>Navega usando los botones superiores para explorar el increíble trabajo que realizan nuestros compañeros y docentes en Informática, Hotelería, Gastronomía y más. ¡Sumérgete en el mundo del saber técnico!</p>
+            <div class="hero-banner">
+                <h2>Bienvenidos a la Nueva Era Digital</h2>
+            </div>
+            <article class="main-article">
+                <div class="news-card">
+                    <p class="lead-text">¡Les damos la más cordial bienvenida a "El Heraldo Técnico"! Este espacio digital nace con el propósito de informar, conectar y celebrar los logros de todas las áreas técnicas del <strong>Politécnico Fundación MIR Max Simón</strong>.</p>
+                    <p>Aquí encontrarás las últimas noticias, proyectos innovadores y eventos destacados. Navega usando los botones superiores para explorar el increíble trabajo que realizan nuestros compañeros y docentes en Informática, Hotelería, Gastronomía y más. ¡Sumérgete en el mundo del saber técnico!</p>
+                </div>
             </article>
         </section>
 
         <section id="informatica" class="content-section">
-            <h2>💻 Informática: Innovación en Gestión Académica</h2>
-            <article>
-                <h3>Estudiantes de 6to de Informática Lanzan Plataforma Revolucionaria de Horarios</h3>
-                
+            <h2 class="section-title">💻 Informática: Innovación Académica</h2>
+            <article class="news-card">
+                <h3>Estudiantes de 6to lanzan Plataforma Revolucionaria de Horarios</h3>
                 <p>Con gran orgullo, anunciamos el lanzamiento oficial de una innovadora plataforma web interactiva, desarrollada íntegramente por nuestros talentosos estudiantes de 6to año del área de Informática. Esta solución digital está diseñada para optimizar la gestión y selección de los 26 horarios disponibles para los niveles de 1ro a 6to de bachillerato.</p>
-                <p>La plataforma ofrece una interfaz intuitiva que permite a la comunidad educativa navegar, consultar y administrar eficientemente los diferentes esquemas horarios, facilitando la organización académica y la comunicación. Este proyecto no solo demuestra el alto nivel de conocimiento técnico y creatividad de nuestros alumnos, sino que también representa una valiosa contribución a la eficiencia operativa de nuestra institución.</p>
                 
-                <div class="qr-container">
-                    <p>Accede directamente a la plataforma escaneando el siguiente código QR:</p>
-                    <img src="QR horario.png" alt="Código QR para la plataforma de horarios">
+                <div class="highlight-box">
+                    <p>La plataforma ofrece una interfaz intuitiva que permite a la comunidad educativa navegar, consultar y administrar eficientemente los diferentes esquemas horarios.</p>
                 </div>
-                
-                <p>Felicitamos a todos los involucrados por su dedicación y por llevar la innovación tecnológica al servicio de nuestra escuela. Este logro es un testimonio del impacto transformador de la educación técnica.</p>
+
+                <div class="qr-container">
+                    <p><strong>¡Escanea para acceder!</strong></p>
+                    <img src="QR horario.png" alt="Código QR para la plataforma de horarios">
+                    <p><small>Acceso directo a la Web App</small></p>
+                </div>
+                <p class="author-note">Felicitamos a todos los involucrados por su dedicación y por llevar la innovación tecnológica al servicio de nuestra escuela.</p>
             </article>
         </section>
 
         <section id="hoteleria" class="content-section">
-            <h2>🏨 Hotelería y Turismo</h2>
-            <article>
-                <h3>Prácticas Exitosas en Cadenas Hoteleras Locales</h3>
-                <p>Nuestros estudiantes de Hotelería están dejando una huella positiva. Gracias a los convenios de la escuela, el 90% de los estudiantes de último año ya están realizando sus prácticas en reconocidos hoteles de la ciudad. Los gerentes de recepción y A&B han destacado su profesionalismo y excelente servicio al cliente.</p>
-                <p>Además, el departamento está organizando la "Semana del Turismo Sostenible", con charlas y talleres sobre cómo la industria puede operar de manera más amigable con el medio ambiente.</p>
+            <h2 class="section-title">🏨 Hotelería y Turismo</h2>
+            <article class="news-card">
+                <h3>Gran Alianza: Hotelería y Gastronomía Preparan Evento Conjunto</h3>
+                <p>El área de Hotelería ha anunciado que estarán encabezando una importante actividad en colaboración con el departamento de Gastronomía. Este evento, diseñado para demostrar la excelencia en el servicio y el arte culinario, se llevará a cabo próximamente en las instalaciones de nuestro <strong>Politécnico Fundación MIR Max Simón</strong>.</p>
+                <p>Los estudiantes de Hotelería se encargarán de todo el protocolo, montaje y servicio de mesa, aplicando los estándares internacionales aprendidos en clase, mientras que sus compañeros de Gastronomía elaborarán el menú. Esta sinergia entre áreas técnicas promete ser una experiencia inolvidable.</p>
             </article>
         </section>
 
         <section id="gastronomia" class="content-section">
-            <h2>🍲 Gastronomía</h2>
-            <article>
+            <h2 class="section-title">🍲 Gastronomía</h2>
+            <article class="news-card">
                 <h3>Festival de Sabores: Un Viaje por la Cocina Criolla</h3>
                 <p>El área de Gastronomía cerró el mes con su aclamado "Festival de Sabores". Los estudiantes presentaron una degustación de platos criollos con técnicas de alta cocina. El evento fue un éxito rotundo, con la asistencia de padres, personal docente e invitados especiales de la industria restaurantera.</p>
             </article>
         </section>
 
         <section id="agropecuaria" class="content-section">
-            <h2>🚜 Agropecuaria</h2>
-            <article>
-                <h3>Implementan Nuevo Sistema de Riego por Goteo en Huerto Escolar</h3>
-                <p>El departamento de Agropecuaria ha dado un gran paso hacia la sostenibilidad con la instalación de un sistema de riego por goteo automatizado. Este proyecto, liderado por los propios estudiantes, permitirá un ahorro de hasta el 50% en el consumo de agua y mejorará la productividad del huerto escolar.</p>
+            <h2 class="section-title">🚜 Agropecuaria</h2>
+            <article class="news-card">
+                <h3>Proyecto de Siembra Sostenible: El Hoyo de 16 Pies</h3>
+                <p>Hace unas semanas, los estudiantes de Agropecuaria, bajo la guía del maestro Rodolfo, se embarcaron en un ambicioso proyecto de siembra. La iniciativa consistió en la excavación de un hoyo de unos impresionantes 16 pies de profundidad destinado a la siembra de guineos.</p>
+                <p>Este método busca optimizar el uso del suelo y los nutrientes. Los estudiantes aportaron cepas de plátano y una gran cantidad de residuos orgánicos, que servirán como fertilizante natural de alta calidad. Esta técnica promueve el reciclaje de materia orgánica y asegura alimentos más saludables.</p>
+                
+                <div class="video-gallery" style="margin-top: 30px;">
+                    <h4>🎥 Trabajo en Campo</h4>
+                    <div class="video-grid" style="grid-template-columns: 1fr;">
+                        <div class="video-item">
+                            <p>Proceso de Excavación y Preparación</p>
+                            <video src="agro.mp4" controls preload="metadata"></video>
+                        </div>
+                    </div>
+                </div>
             </article>
         </section>
 
         <section id="mecanica" class="content-section">
-            <h2>🔧 Mecánica Automotriz</h2>
-            <article>
+            <h2 class="section-title">🔧 Mecánica Automotriz</h2>
+            <article class="news-card">
+                <h3>Taller Práctico: Reparación y Encendido de Motor de Camioneta</h3>
+                <p class="lead-text">Los estudiantes del área de Mecánica Automotriz recibieron una instrucción práctica intensiva sobre la **reparación y el encendido** de un motor de camioneta. Esta actividad fundamental se llevó a cabo bajo la dirección del **Maestro Daniel**, el maestro oficial del área de Mecánica.</p>
+                <p>La clase se centró en el diagnóstico de fallas, el proceso de desmontaje de componentes clave y, finalmente, el reensamblaje y la puesta en marcha del motor. Esta experiencia en un vehículo real proporciona a los alumnos habilidades esenciales y conocimientos directos que complementan su formación técnica.</p>
+            </article>
+            <article class="news-card" style="margin-top: 30px;">
                 <h3>Proyecto "Go-Kart Eléctrico": Innovación en Marcha</h3>
-                <p>Los estudiantes de Mecánica están trabajando en un proyecto emocionante: la conversión de un chasis de go-kart tradicional a un vehículo 100% eléctrico. El equipo está diseñando el sistema de baterías y adaptando un motor eléctrico recuperado.</p>
+                <p>El equipo de Mecánica también sigue trabajando en el emocionante proyecto de la conversión de un chasis de go-kart tradicional a un vehículo 100% eléctrico, preparándose para la próxima feria de ciencias.</p>
             </article>
         </section>
 
         <section id="enfermeria" class="content-section">
-            <h2>🩺 Enfermería</h2>
-            <article>
-                <h3>Jornada de Salud Preventiva: Cuidando a Nuestra Comunidad</h3>
-                <p>El área de Enfermería organizó una exitosa Jornada de Salud Preventiva. Durante dos días, los estudiantes, bajo la supervisión de sus instructores, ofrecieron tomas de presión arterial, medición de glucosa y charlas sobre higiene y nutrición a toda la comunidad educativa.</p>
+            <h2 class="section-title">🩺 Enfermería: Tecnología y Salud</h2>
+            <article class="news-card">
+                <h3>Llegan Nuevos Equipos Médicos al Politécnico</h3>
+                <p>El <strong>Politécnico Fundación MIR Max Simón</strong> continúa a la vanguardia en educación técnica. Hace apenas dos semanas, nuestra institución recibió un importante lote de nuevos equipos médicos destinados al laboratorio de Enfermería. Esta adquisición representa un salto de calidad significativo para las prácticas clínicas de los estudiantes.</p>
+                <p>Entre los nuevos insumos se destacan simuladores de pacientes de última generación, instrumental quirúrgico renovado y dispositivos de monitoreo digital. "Contar con esta tecnología nos permite simular escenarios reales de emergencia", expresaron docentes del área.</p>
+            </article>
+        </section>
+
+        <section id="reportajes" class="content-section">
+            <h2 class="section-title">✍️ Reportajes Especiales y Proyectos LE</h2>
+            
+            <div class="grid-container">
+                <article class="reportaje-card">
+                    <span class="tag">6TO - Ciberseguridad</span>
+                    <h3>El cibercrimen en RD: Amenaza invisible</h3>
+                    <p class="meta">Por: Samuel Ernesto Rosario Guerrero | 6to E</p>
+                    <a href="reportaje samuel.pdf" target="_blank" class="pdf-link-btn">Ver Reportaje Completo (PDF)</a>
+                    <p>Cada día más dominicanos son víctimas de ataques digitales que vulneran su privacidad y sus finanzas. En una madrugada cualquiera, los servidores de una empresa financiera fueron atacados...</p>
+                </article>
+
+                <article class="reportaje-card">
+                    <span class="tag">6TO - Sociedad</span>
+                    <h3>Riesgos del Internet en República Dominicana</h3>
+                    <p class="meta">Por: Jery Ismael Caba N. | 6to E Info</p>
+                    <a href="reportaje Jery.pdf" target="_blank" class="pdf-link-btn">Ver Reportaje Completo (PDF)</a>
+                    <p>El uso del internet en el país ha crecido, y con él, los riesgos. El cibercrimen consiste en delitos cometidos a través de redes, como el robo de contraseñas o estafas...</p>
+                </article>
+
+                <article class="reportaje-card">
+                    <span class="tag">6TO - Actualidad</span>
+                    <h3>Amenaza Invisible que Crece Cada Día</h3>
+                    <p class="meta">Por: Aran Alejandro Peñuelas Peñaloza | 6to E</p>
+                    <a href="reportaje Aran.pdf" target="_blank" class="pdf-link-btn">Ver Reportaje Completo (PDF)</a>
+                    <p>En los últimos años, hemos experimentado un crecimiento acelerado en el uso de tecnologías. Sin embargo, este avance ha traído un aumento alarmante del cibercrimen...</p>
+                </article>
+
+                <article class="reportaje-card">
+                    <span class="tag">6TO - Tecnología</span>
+                    <h3>El Cibercrimen: Una Amenaza Global</h3>
+                    <p class="meta">Por: Reybel G. Beras Rodriguez | 6to E Info</p>
+                    <a href="reportaje Reybel.pdf" target="_blank" class="pdf-link-btn">Ver Reportaje Completo (PDF)</a>
+                    <p>El cibercrimen es una de las amenazas más grandes de la era digital. Abarca actividades ilegales como robos de datos y fraudes financieros...</p>
+                </article>
+            </div>
+
+            <article class="news-card reportaje-section-card" style="margin-top: 50px;">
+                <span class="tag" style="background-color: var(--accent-color);">4TO SECUNDARIA - ALFABETIZACIÓN DIGITAL</span>
+                <h3>¡4to de Secundaria Toma el Escenario con Instructivos para usar Apps!</h3>
+                <p class="meta" style="border-bottom: 1px solid #ddd; padding-bottom: 15px;">Cierre de secuencia didáctica | Noviembre 2025</p>
+                
+                <p class="lead-text">Los talentosos alumnos de 4to de Secundaria han puesto el listón muy alto con la presentación de sus innovadores **Instructivos Digitales**, una actividad que sirvió como brillante cierre de la primera secuencia didáctica del año escolar. Esta exhibición, realizada a finales de octubre, transformó la teoría en práctica al desafiar a los estudiantes a convertirse en expertos y comunicadores digitales.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Creatividad y Competencia Comunicativa en Pleno Esplendor.</strong> El proyecto, denominado "¡De Alumnos para el Mundo Digital!", destacó por la gran creatividad en el uso de formatos y el lenguaje fresco y accesible de los jóvenes.</p>
+                </div>
+
+                <p>La iniciativa ha generado gran entusiasmo en la comunidad educativa, consolidando a nuestros alumnos de 4to como futuros innovadores y líderes en la alfabetización digital, dejando claro que el aprendizaje en el aula tiene un impacto directo y práctico en el mundo conectado de hoy.</p>
+
+                <div class="image-gallery">
+                    <h4>📸 Evidencia Gráfica del Proyecto</h4>
+                    <div class="gallery-grid">
+                        <img src="lengua española 1.jpg" alt="Estudiantes de 4to de Secundaria presentando sus instructivos digitales de aplicaciones." class="gallery-image">
+                        <img src="lengua española 2.jpg" alt="Detalle de las exposiciones de los alumnos de 4to de Secundaria." class="gallery-image">
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <section id="pi-snake" class="content-section">
+            <h2 class="section-title">🐍 Día Especial: La Serpiente de Pi</h2>
+            <article class="news-card">
+                <h3>¡Celebramos el Conocimiento Matemático con Diversión!</h3>
+                <p class="lead-text">Esta sección está dedicada al famoso juego "Pi Snake", una actividad que fusiona la diversión clásica de la serpiente con el desafío de la constante matemática Pi (π).</p>
+                <p>**Próximamente:** Aquí encontrarás noticias, fotografías e información sobre el evento que organizaremos en el Politécnico para celebrar el día del número Pi (3.14) y los ganadores de las competencias de memorización. ¡Vuelve pronto para ver la cobertura completa!</p>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="Snake.pi.html" class="pi-snake-launch-btn">
+                        Jugar Pi Snake Ahora 🕹️
+                    </a>
+                    <p><small>Haz click para ir a la pantalla del juego.</small></p>
+                </div>
+            </article>
+        </section>
+
+
+        <section id="promo" class="content-section">
+            <h2 class="section-title">🎓 Promo ASTHERM 2025-2026</h2>
+            <article class="news-card promo-card">
+                <div class="promo-header">
+                    <h3>¡Lanzamiento Oficial!</h3>
+                    <p>Viernes 7 de noviembre</p>
+                </div>
+                
+                <p>El <strong>Politécnico Fundación MIR Max Simón</strong> vibró con el espectacular lanzamiento de la promoción 2025-2026, bautizada con el nombre de <strong>ASTHERM</strong>. Fue un evento inolvidable donde todos los estudiantes de sexto grado unieron fuerzas.</p>
+                
+                <div class="dato-curioso">
+                    <strong>💡 Dato Curioso:</strong> El nombre "ASTHERM" es un homenaje a la querida maestra Esther. Las letras 'STHER' dentro del nombre pertenecen a ella.
+                </div>
+                
+                <div class="video-gallery">
+                    <h4>🎥 Galería del Evento</h4>
+                    <div class="video-grid">
+                        <div class="video-item">
+                            <p>Coreografía Grupal</p>
+                            <video src="Promo video 1.mp4" controls preload="metadata"></video>
+                        </div>
+                        <div class="video-item">
+                            <p>Presentación en Tarima</p>
+                            <video src="video promo 2.mp4" controls preload="metadata"></video>
+                        </div>
+                        <div class="video-item">
+                            <p>Show de Apertura</p>
+                            <video src="video promo 3.mp4" controls preload="metadata"></video>
+                        </div>
+                    </div>
+                </div>
             </article>
         </section>
 
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2025 - El Heraldo Técnico - Todos los derechos reservados.</p>
-        <p>Escuela Técnica [Nombre de tu Escuela Aquí]</p>
+        <div class="footer-content">
+            <p>&copy; 2025 - El Heraldo Técnico</p>
+            <p class="school-name">Politécnico Fundación MIR Max Simón</p>
+            <div class="credits-box">
+                <p>Diseño y Desarrollo Web realizado por:</p>
+                <p><strong>Estudiantes de Informática de 6to E</strong></p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
