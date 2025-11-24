@@ -609,4 +609,31 @@ body {
         font-size: 1.2em;
         padding: 12px 25px;
     }
+    /*
+ * TRANSICIÓN DE NAVEGACIÓN EN SCROLL
+ * Agrega estas reglas al final de tu archivo style.css
+ */
+
+/* 1. Asegura que la barra de navegación tenga la transición definida */
+.main-nav {
+    /* (Manten las reglas que ya tienes, solo asegúrate de añadir la línea de 'transition') */
+    
+    position: sticky; /* Debe ser 'sticky' o 'fixed' */
+    top: 0;
+    z-index: 1000;
+    /* ESTA LÍNEA ES CLAVE PARA LA SUAVIDAD */
+    transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+    /* (El resto de tus estilos de color y padding van aquí) */
+}
+
+/* 2. Estilo para la barra de navegación oculta */
+.main-nav.nav-hidden {
+    /* Desplaza la barra fuera de la vista hacia arriba */
+    top: -100px; 
+    /* Desvanecer la opacidad para el efecto de desvanecimiento */
+    opacity: 0; 
+    /* Asegura que no se pueda hacer clic en los botones cuando están ocultos */
+    pointer-events: none; 
+}
+
 }
