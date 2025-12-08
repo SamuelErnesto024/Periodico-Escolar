@@ -29,7 +29,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.7;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     transition: background-color 0.5s, color 0.5s; /* Transición para modo oscuro */
 }
 
@@ -109,11 +109,11 @@ body.dark-mode .credits-box {
 /* ========================================= */
 .splash-title.neon-3d {
     font-family: var(--font-title);
-    font-size: 7em; 
+    font-size: 7em;
     margin: 10px 0;
     line-height: 1;
     color: #fff; /* Base blanca */
-    text-shadow: 
+    text-shadow:
         0 0 10px #fff,
         0 0 20px #fff,
         0 0 30px var(--neon-color),
@@ -129,14 +129,14 @@ body.dark-mode .credits-box {
 
 @keyframes neon-blink {
     from {
-        text-shadow: 
+        text-shadow:
             0 0 10px #fff, 0 0 20px #fff,
             0 0 30px var(--neon-color), 0 0 40px var(--neon-color),
             0 0 70px var(--neon-color), 0 0 80px var(--neon-color),
             0 0 100px var(--neon-color);
     }
     to {
-        text-shadow: 
+        text-shadow:
             0 0 5px #fff, 0 0 15px #fff,
             0 0 25px var(--neon-color), 0 0 35px var(--neon-color),
             0 0 60px var(--neon-color), 0 0 75px var(--neon-color),
@@ -258,7 +258,7 @@ body.dark-mode #floating-nav-buttons .nav-button:hover {
 /* Estilo para el botón de Dark Mode */
 #dark-mode-toggle {
     background-color: var(--primary-color);
-    color: #f1c40f; 
+    color: #f1c40f;
     border: none;
     width: 50px;
     height: 50px;
@@ -278,7 +278,7 @@ body.dark-mode #floating-nav-buttons .nav-button:hover {
 }
 body.dark-mode #dark-mode-toggle {
     background-color: var(--dark-paper-color);
-    color: #f39c12; 
+    color: #f39c12;
 }
 body.dark-mode #dark-mode-toggle:hover {
     background-color: #2c3e50;
@@ -292,9 +292,6 @@ body.dark-mode #dark-mode-toggle:hover {
     /* NOTA: Para navegación en móvil se sugiere añadir una barra de navegación fija en la parte inferior. */
 }
 
-
-/* --- CÓDIGO YA EXISTENTE (NO MODIFICADO EN ESTE PASO) --- */
-
 /* --- SPLASH SCREEN --- */
 #splash-screen {
     position: fixed;
@@ -302,15 +299,15 @@ body.dark-mode #dark-mode-toggle:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     color: white;
-    z-index: 9999; 
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     opacity: 1;
-    transition: opacity 0.8s ease-in-out; 
+    transition: opacity 0.8s ease-in-out;
 }
 
 .splash-content {
@@ -323,13 +320,13 @@ body.dark-mode #dark-mode-toggle:hover {
     font-size: 1.2em;
     letter-spacing: 5px;
     text-transform: uppercase;
-    color: #bdc3c7; 
+    color: #bdc3c7;
     margin-bottom: 5px;
 }
 
 .splash-title {
     font-family: var(--font-title);
-    font-size: 7em; 
+    font-size: 7em;
     margin: 10px 0;
     line-height: 1;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
@@ -339,7 +336,7 @@ body.dark-mode #dark-mode-toggle:hover {
     font-family: var(--font-body);
     font-size: 1.8em;
     font-style: italic;
-    color: var(--hover-color); 
+    color: var(--hover-color);
     margin-bottom: 40px;
     border-bottom: 2px solid rgba(231, 76, 60, 0.5);
     padding-bottom: 10px;
@@ -354,7 +351,7 @@ body.dark-mode #dark-mode-toggle:hover {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    border-radius: 50px; 
+    border-radius: 50px;
     transition: all 0.4s ease;
     letter-spacing: 1px;
 }
@@ -376,7 +373,6 @@ body.dark-mode #dark-mode-toggle:hover {
 /* ========================================= */
 /* --- FIN SPLASH SCREEN --- */
 /* ========================================= */
-
 
 /* --- ENCABEZADO TIPO PERIÓDICO --- */
 .main-header {
@@ -430,7 +426,6 @@ body.dark-mode #dark-mode-toggle:hover {
     margin-right: auto;
 }
 
-
 /* Botones con Nueva Animación (SOLO PARA MENU FLOTANTE) */
 .nav-button {
     background: none;
@@ -442,19 +437,19 @@ body.dark-mode #dark-mode-toggle:hover {
     font-size: 0.95em;
     text-transform: uppercase;
     cursor: pointer;
-    text-decoration: none; 
-    display: flex; 
-    align-items: center; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
 }
 
 /* Efecto HOVER (Cuando pasas el mouse) */
 .nav-button:hover {
-    background-color: var(--hover-color); 
+    background-color: var(--hover-color);
     color: #fff;
-    transform: translateY(-3px) scale(1.05); 
-    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); 
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
     z-index: 2;
 }
 
@@ -468,7 +463,7 @@ body.dark-mode #dark-mode-toggle:hover {
     background-color: var(--accent-color);
 }
 .nav-button.highlight:hover {
-    background-color: #ff5733; 
+    background-color: #ff5733;
 }
 
 /* Botón de Lanzamiento del Juego dentro de la sección Pi Snake */
@@ -491,14 +486,13 @@ body.dark-mode #dark-mode-toggle:hover {
     box-shadow: 0 12px 20px rgba(46, 204, 113, 0.6);
 }
 
-
 /* --- CONTENIDO PRINCIPAL Y TRANSICIONES --- */
 .content-area {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
     min-height: 60vh;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .content-section {
@@ -511,13 +505,13 @@ body.dark-mode #dark-mode-toggle:hover {
 
 /* ANIMACIÓN 1: El Título entra desde la izquierda */
 @keyframes slideInLeft {
-    from { 
-        opacity: 0; 
-        transform: translateX(-50px); 
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateX(0); 
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 .content-section.active h2 {
@@ -526,18 +520,18 @@ body.dark-mode #dark-mode-toggle:hover {
 
 /* ANIMACIÓN 2: La tarjeta entra desde abajo con rebote y blur */
 @keyframes slideInUpBlur {
-    from { 
-        opacity: 0; 
+    from {
+        opacity: 0;
         transform: translateY(40px) scale(0.98);
-        filter: blur(5px); 
+        filter: blur(5px);
     }
-    to { 
-        opacity: 1; 
+    to {
+        opacity: 1;
         transform: translateY(0) scale(1);
-        filter: blur(0); 
+        filter: blur(0);
     }
 }
-.content-section.active article, 
+.content-section.active article,
 .content-section.active .grid-container {
     animation: slideInUpBlur 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.2s both; /* 0.2s de retraso */
 }
@@ -582,14 +576,14 @@ body.dark-mode #dark-mode-toggle:hover {
     background-color: var(--paper-color);
     padding: 50px;
     border-radius: 4px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     border: 1px solid #eee;
     margin-bottom: 40px;
     transition: transform 0.3s ease;
 }
 
 .news-card:hover {
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
 }
 
 .news-card h3 {
@@ -612,7 +606,7 @@ body.dark-mode #dark-mode-toggle:hover {
 
 /* Cajas destacadas */
 .highlight-box {
-    background-color: #fdf2e9; 
+    background-color: #fdf2e9;
     border-left: 4px solid var(--hover-color);
     padding: 20px;
     margin: 25px 0;
@@ -656,7 +650,7 @@ body.dark-mode #dark-mode-toggle:hover {
 }
 
 .reportaje-card:hover {
-    transform: translateY(-10px); 
+    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
@@ -682,16 +676,16 @@ body.dark-mode #dark-mode-toggle:hover {
     font-size: 0.9em;
     color: #7f8c8d;
     font-style: italic;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     padding-bottom: 0;
 }
 
 /* Botón/Enlace de PDF */
 .pdf-link-btn {
-    display: block; 
+    display: block;
     text-align: center;
-    text-decoration: none; 
-    background-color: var(--hover-color); 
+    text-decoration: none;
+    background-color: var(--hover-color);
     color: white;
     padding: 12px 15px;
     margin-top: 15px;
@@ -706,14 +700,13 @@ body.dark-mode #dark-mode-toggle:hover {
 }
 
 .pdf-link-btn:hover {
-    background-color: #ff5733; 
+    background-color: #ff5733;
     transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 6px 12px rgba(231, 76, 60, 0.5); 
+    box-shadow: 0 6px 12px rgba(231, 76, 60, 0.5);
 }
 
-
 .read-more-btn {
-    display: none; 
+    display: none;
 }
 
 /* --- GALERÍA DE IMÁGENES DENTRO DEL ARTÍCULO (4TO SECUNDARIA) --- */
@@ -738,16 +731,15 @@ body.dark-mode #dark-mode-toggle:hover {
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    object-fit: cover; 
+    object-fit: cover;
 }
 .gallery-image:hover {
     transform: scale(1.05);
 }
 
-
 /* --- ESTILOS PARA LA PROMO --- */
 .promo-card {
-    border-top: 5px solid #f1c40f; 
+    border-top: 5px solid #f1c40f;
 }
 
 .promo-header {
@@ -836,11 +828,52 @@ body.dark-mode #dark-mode-toggle:hover {
 }
 
 .credits-box strong {
-    color: #f1c40f; 
+    color: #f1c40f;
     font-size: 1.2em;
     display: block;
     margin-top: 5px;
 }
+
+/* ====== ESTILOS ADICIONALES PARA LAS NUEVAS SECCIONES ====== */
+
+/* Galería PI (espacios) */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.image-slot {
+    background: #ddd;
+    border-radius: 8px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Área de trabajo */
+.workspace-container,
+.external-page-space,
+.pi-info-area,
+.pi-game-area {
+    background: var(--card-bg, #f7f7f7);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Marco de página externa */
+.external-frame {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 8px;
+}
+
 /* --- FIN KEYFRAMES (LAS ANIMACIONES) --- */
 
 /* Responsividad */
@@ -858,10 +891,83 @@ body.dark-mode #dark-mode-toggle:hover {
     /* NOTA: main-nav está oculto de todas formas */
     .news-card { padding: 25px; }
     .header-top-line { flex-direction: column; gap: 5px; }
-    
+   
     /* Para el móvil, hacemos los botones de juego más visibles */
     .pi-snake-launch-btn {
         font-size: 1.2em;
         padding: 12px 25px;
     }
+
+    .image-slot { height: 100px; }
+}
+/* ==== NAVIDAD MIR ==== */
+#navidad-mir .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#navidad-mir .gallery-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform .3s;
+}
+
+#navidad-mir .gallery-image:hover {
+    transform: scale(1.04);
+}
+
+/* ==== CRÉDITOS ==== */
+#creditos .news-card {
+    padding: 25px;
+}
+
+#creditos .highlight-box {
+    background: #fdf6e3;
+    border-left: 5px solid var(--accent-color);
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+#creditos p {
+    font-size: 1.1rem;
+    line-height: 1.5em;
+}
+/* ===============================
+   SECCIÓN INFORMÁTICA – IMAGEN GRANDE
+================================*/
+.informatica-big-image-box {
+    margin-top: 50px;
+    padding: 25px;
+    border-radius: 14px;
+    background: var(--card-bg);
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.informatica-big-image-box .big-image-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.informatica-big-image-box .big-image-sub {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+.big-informatica-image {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 18px rgba(0,0,0,0.25);
 }

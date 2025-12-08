@@ -12,7 +12,8 @@
     <div id="splash-screen">
         <div class="splash-content">
             <p class="splash-pretitle">Politécnico Fundación MIR Max Simón</p>
-            <h1 class="splash-title neon-3d">El Heraldo Técnico</h1> <p class="splash-subtitle">Edición Digital 2025: Innovación y Liderazgo</p>
+            <h1 class="splash-title neon-3d">El Heraldo Técnico</h1>
+            <p class="splash-subtitle">Edición Digital 2025: Innovación y Liderazgo</p>
             <button id="enter-button" class="splash-button">Explorar Periódico</button>
             <p class="splash-footer">Diseñado por 6to E, Informática</p>
         </div>
@@ -38,17 +39,65 @@
             <button class="nav-button" data-target="mecanica">Mecánica</button>
             <button class="nav-button" data-target="enfermeria">Enfermería</button>
             <button class="nav-button highlight" data-target="reportajes">Reportajes LE</button>
-            <button class="nav-button highlight" data-target="pi-snake">Día Pi Snake 🐍</button>
+            <button class="nav-button highlight" data-target="pi-section">Día Pi Snake 🐍</button>
             <button class="nav-button highlight" data-target="promo">Promo ASTHERM</button>
+            <button class="nav-button highlight" data-target="navidad-mir">Navidad MIR 🎄</button>
+            <button class="nav-button" data-target="creditos">Créditos</button>
+
+
+
+
+            <!-- NUEVOS BOTONES SOLICITADOS -->
+            <button class="nav-button" data-target="lengua-section">Lengua Española</button>
+            <button class="nav-button" data-target="fisica-section">Física</button>
         </div>
     </nav>
 
     <div id="floating-nav-container">
         <button id="nav-toggle-button">☰</button>
         <div id="floating-nav-buttons">
-            </div>
+        </div>
         <button id="dark-mode-toggle" title="Modo Oscuro/Claro">☀️</button>
     </div>
+<section id="navidad-mir" class="content-section">
+    <h2 class="section-title">🎄 Navidad MIR – Galería Especial</h2>
+
+    <article class="news-card">
+        <h3>Celebración Navideña del Politécnico MIR</h3>
+        <p class="lead-text">Aquí encontrarás las imágenes oficiales de la Navidad MIR. ¡Un espacio dedicado para recordar los mejores momentos!</p>
+
+        <div class="image-gallery">
+            <h4>📸 Galería</h4>
+            <div class="gallery-grid">
+                <img src="R1.jpg" alt="Navidad MIR Foto R1" class="gallery-image">
+                <img src="R2.jpg" alt="Navidad MIR Foto R2" class="gallery-image">
+                <img src="R3.jpg" alt="Navidad MIR Foto R3" class="gallery-image">
+            </div>
+        </div>
+    </article>
+</section>
+
+<section id="creditos" class="content-section">
+    <h2 class="section-title">📜 Créditos Oficiales</h2>
+
+    <article class="news-card">
+        <h3>Equipo Responsable</h3>
+
+        <p><strong>Presidente del Área Técnica:</strong> Jery Caba</p>
+        <p><strong>Secretario:</strong> Ángel Aneudy</p>
+
+        <div class="highlight-box">
+            <p><strong>Diseñador Principal & Director de la Página:</strong><br>
+            Samuel Ernesto Rosario Guerrero</p>
+
+            <p><strong>Correo Electrónico:</strong> seaj.studios@gmail.com</p>
+            <p><strong>Número:</strong> Próximamente</p>
+        </div>
+
+        <p>Este periódico digital fue diseñado gracias al esfuerzo colectivo y el compromiso del área técnica del Politécnico Fundación MIR Max Simón.</p>
+    </article>
+</section>
+
     <main class="content-area">
 
         <section id="inicio" class="content-section active">
@@ -68,7 +117,7 @@
             <article class="news-card">
                 <h3>Estudiantes de 6to lanzan Plataforma Revolucionaria de Horarios</h3>
                 <p>Con gran orgullo, anunciamos el lanzamiento oficial de una innovadora plataforma web interactiva, desarrollada íntegramente por nuestros talentosos estudiantes de 6to año del área de Informática. Esta solución digital está diseñada para optimizar la gestión y selección de los 26 horarios disponibles para los niveles de 1ro a 6to de bachillerato.</p>
-                
+
                 <div class="highlight-box">
                     <p>La plataforma ofrece una interfaz intuitiva que permite a la comunidad educativa navegar, consultar y administrar eficientemente los diferentes esquemas horarios.</p>
                 </div>
@@ -79,7 +128,23 @@
                     <p><small>Acceso directo a la Web App</small></p>
                 </div>
                 <p class="author-note">Felicitamos a todos los involucrados por su dedicación y por llevar la innovación tecnológica al servicio de nuestra escuela.</p>
+            <!-- ===============================
+     ESPACIO PARA IMAGEN GRANDE
+     INFORMÁTICA
+=============================== -->
+<div class="informatica-big-image-box">
+    <h3 class="big-image-title">Imagen Destacada del Área de Informática</h3>
+    <p class="big-image-sub">
+    </p>
+
+    <!-- Reemplaza "imagen-informatica.jpg" por tu imagen -->
+    <img src="Destacada.jpg" 
+         alt="Imagen destacada de Informática" 
+         class="big-informatica-image">
+</div>
+
             </article>
+            
         </section>
 
         <section id="hoteleria" class="content-section">
@@ -95,10 +160,10 @@
             <h2 class="section-title">🍲 Gastronomía: Tradición y Sabor Dominicano</h2>
             <article class="news-card">
                 <h3>El Gran Sancocho Navideño: Despedida con Sabor a República Dominicana</h3>
-                <p class="lead-text">Como es tradición en nuestro Politécnico, todos los años en el mes de **diciembre** se celebra una gran despedida para dar inicio a las vacaciones de Navidad, cuyo eje central es la cocina de platos típicos dominicanos, entre los que destaca nuestro delicioso **Sancocho**.</p>
-                
+                <p class="lead-text">Como es tradición en nuestro Politécnico, todos los años en el mes de <strong>diciembre</strong> se celebra una gran despedida para dar inicio a las vacaciones de Navidad, cuyo eje central es la cocina de platos típicos dominicanos, entre los que destaca nuestro delicioso <strong>Sancocho</strong>.</p>
+
                 <div class="highlight-box">
-                    <p>Los estudiantes de **6to de Gastronomía** son los encargados principales de organizar y llevar a cabo esta actividad culinaria, preparando el festín bajo la supervisión experta de su maestro y **Chef Aníbal**.</p>
+                    <p>Los estudiantes de <strong>6to de Gastronomía</strong> son los encargados principales de organizar y llevar a cabo esta actividad culinaria, preparando el festín bajo la supervisión experta de su maestro y <strong>Chef Aníbal</strong>.</p>
                 </div>
 
                 <p>Este evento no solo celebra la época festiva, sino que también sirve como una importante práctica profesional, demostrando las habilidades adquiridas en la elaboración de la gastronomía nacional a gran escala.</p>
@@ -111,7 +176,7 @@
                 <h3>Proyecto de Siembra Sostenible: El Hoyo de 16 Pies</h3>
                 <p>Hace unas semanas, los estudiantes de Agropecuaria, bajo la guía del maestro Rodolfo, se embarcaron en un ambicioso proyecto de siembra. La iniciativa consistió en la excavación de un hoyo de unos impresionantes 16 pies de profundidad destinado a la siembra de guineos.</p>
                 <p>Este método busca optimizar el uso del suelo y los nutrientes. Los estudiantes aportaron cepas de plátano y una gran cantidad de residuos orgánicos, que servirán como fertilizante natural de alta calidad. Esta técnica promueve el reciclaje de materia orgánica y asegura alimentos más saludables.</p>
-                
+
                 <div class="video-gallery" style="margin-top: 30px;">
                     <h4>🎥 Trabajo en Campo</h4>
                     <div class="video-grid" style="grid-template-columns: 1fr;">
@@ -128,7 +193,7 @@
             <h2 class="section-title">🔧 Mecánica Automotriz</h2>
             <article class="news-card">
                 <h3>Taller Práctico: Reparación y Encendido de Motor de Camioneta</h3>
-                <p class="lead-text">Los estudiantes del área de Mecánica Automotriz recibieron una instrucción práctica intensiva sobre la **reparación y el encendido** de un motor de camioneta. Esta actividad fundamental se llevó a cabo bajo la dirección del **Maestro Daniel**, el maestro oficial del área de Mecánica.</p>
+                <p class="lead-text">Los estudiantes del área de Mecánica Automotriz recibieron una instrucción práctica intensiva sobre la <strong>reparación y el encendido</strong> de un motor de camioneta. Esta actividad fundamental se llevó a cabo bajo la dirección del <strong>Maestro Daniel</strong>, el maestro oficial del área de Mecánica.</p>
                 <p>La clase se centró en el diagnóstico de fallas, el proceso de desmontaje de componentes clave y, finalmente, el reensamblaje y la puesta en marcha del motor. Esta experiencia en un vehículo real proporciona a los alumnos habilidades esenciales y conocimientos directos que complementan su formación técnica.</p>
             </article>
         </section>
@@ -144,9 +209,9 @@
 
         <section id="reportajes" class="content-section">
             <h2 class="section-title">✍️ Reportajes Especiales y Proyectos LE</h2>
-            
+
             <p class="lead-text" style="text-align: center; margin-bottom: 40px; color: var(--accent-color);">
-                Esta sección de reportajes y proyectos fue dirigida por la **Maestra Viviana Aponte** para el área de Lengua Española.
+                Esta sección de reportajes y proyectos fue dirigida por la <strong>Maestra Viviana Aponte</strong> para el área de Lengua Española.
             </p>
 
             <div class="grid-container">
@@ -187,8 +252,8 @@
                 <span class="tag" style="background-color: var(--accent-color);">4TO SECUNDARIA - ALFABETIZACIÓN DIGITAL</span>
                 <h3>¡4to de Secundaria Toma el Escenario con Instructivos para usar Apps!</h3>
                 <p class="meta" style="border-bottom: 1px solid #ddd; padding-bottom: 15px;">Cierre de secuencia didáctica | Noviembre 2025</p>
-                
-                <p class="lead-text">Los talentosos alumnos de 4to de Secundaria han puesto el listón muy alto con la presentación de sus innovadores **Instructivos Digitales**, una actividad que sirvió como brillante cierre de la primera secuencia didáctica del año escolar. Esta exhibición, realizada a finales de octubre, transformó la teoría en práctica al desafiar a los estudiantes a convertirse en expertos y comunicadores digitales.</p>
+
+                <p class="lead-text">Los talentosos alumnos de 4to de Secundaria han puesto el listón muy alto con la presentación de sus innovadores <strong>Instructivos Digitales</strong>, una actividad que sirvió como brillante cierre de la primera secuencia didáctica del año escolar. Esta exhibición, realizada a finales de octubre, transformó la teoría en práctica al desafiar a los estudiantes a convertirse en expertos y comunicadores digitales.</p>
 
                 <div class="highlight-box">
                     <p><strong>Creatividad y Competencia Comunicativa en Pleno Esplendor.</strong> El proyecto, denominado "¡De Alumnos para el Mundo Digital!", destacó por la gran creatividad en el uso de formatos y el lenguaje fresco y accesible de los jóvenes.</p>
@@ -207,27 +272,76 @@
 
         </section>
 
-        <section id="pi-snake" class="content-section">
-            <h2 class="section-title">🐍 Día Especial: La Serpiente de Pi</h2>
+        <!-- NUEVA SECCIÓN: LENGUA ESPAÑOLA -->
+        <section id="lengua-section" class="content-section">
+            <h2 class="section-title">📚 Lengua Española</h2>
             <article class="news-card">
-                <h3>¡Celebramos el Conocimiento Matemático con Diversión!</h3>
-                <p class="lead-text">Esta sección está dedicada al famoso juego "Pi Snake", una actividad que fusiona la diversión clásica de la serpiente con el desafío de la constante matemática Pi (π).</p>
+                <h3>Zona de Lengua Española</h3>
+                <p>Espacio destinado para agregar información nueva, análisis, resúmenes, trabajos y recursos didácticos relacionados con Lengua Española. Ideal para artículos, guías y PDFs.</p>
 
-                <div class="highlight-box">
-                    <p>El juego **Pi Snake** fue creado y desarrollado por los estudiantes de **6to E de Informática** el año pasado, cuando cursaban **5to E**. Lo presentaron como proyecto especial para la celebración del **Día del Pi (3.14)**, bajo la guía del **Maestro Ángel Donays**.</p>
-                </div>
-                
-                <p>**Próximamente:** Aquí encontrarás noticias, fotografías e información sobre el evento que organizaremos en el Politécnico para celebrar el día del número Pi (3.14) y los ganadores de las competencias de memorización. ¡Vuelve pronto para ver la cobertura completa!</p>
-
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="Snake.pi.html" class="pi-snake-launch-btn">
-                        Jugar Pi Snake Ahora 🕹️
-                    </a>
-                    <p><small>Haz click para ir a la pantalla del juego.</small></p>
+                <div class="workspace-container">
+                    <h4>Zona de trabajo</h4>
+                    <p>➕ Aquí puedes añadir textos, recursos, actividades o enlaces a documentos que hagan falta compartir con estudiantes y docentes.</p>
                 </div>
             </article>
         </section>
 
+        <!-- NUEVA SECCIÓN: FÍSICA -->
+        <section id="fisica-section" class="content-section">
+            <h2 class="section-title">🔭 Física</h2>
+            <article class="news-card">
+                <h3>Proyectos y Contenido de Física</h3>
+                <p>Sección preparada para integrar una nueva página web o módulos interactivos de Física. Aquí puedes enlazar simuladores, PDFs o incrustar páginas externas.</p>
+
+                <div class="external-page-space">
+                    <h4>Zona para insertar página externa</h4>
+                    <p>🔗 Si tienes una página específica o un proyecto en HTML, puedes enlazarla o incrustarla mediante un iframe (ejemplo comentado abajo).</p>
+
+                    <!-- Ejemplo opcional (descomentar si se utiliza) -->
+                    <!-- <iframe src="fisica_contenido.html" class="external-frame"></iframe> -->
+                </div>
+            </article>
+        </section>
+
+        <!-- SECCIÓN REEMPLAZADA / MEJORADA: DÍA DEL PI (PI SNAKE + GALERÍA + INFO) -->
+        <section id="pi-section" class="content-section">
+            <h2 class="section-title">🐍 Día del Número PI</h2>
+
+            <article class="news-card">
+                <h3>Celebración y Actividades del Día del PI</h3>
+                <p class="lead-text">Esta área reúne información, galería y el juego PI Snake. Útil para documentar el evento, compartir ganadores y mostrar fotos y evidencias.</p>
+
+                <div class="pi-info-area">
+                    <h4>Información sobre PI</h4>
+                    <p>Aquí puedes agregar explicaciones, datos curiosos, historia del número π, actividades de memorización y links a recursos educativos.</p>
+                </div>
+
+                <div class="pi-images-area">
+                    <h4>Galería del Día del PI</h4>
+                    <p>Espacios listos para agregar imágenes del evento o trabajos escolares.</p>
+
+                    <div class="image-grid">
+                        <div class="image-slot"><span>Imagen 1</span></div>
+                        <div class="image-slot"><span>Imagen 2</span></div>
+                        <div class="image-slot"><span>Imagen 3</span></div>
+                        <div class="image-slot"><span>Imagen 4</span></div>
+                    </div>
+                </div>
+
+                <div class="pi-game-area" style="margin-top:20px;">
+                    <h4>Juego: PI Snake</h4>
+                    <p>Haz click para ir a la pantalla del juego o incrusta el juego directamente si lo deseas.</p>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="Snake.pi.html" class="pi-snake-launch-btn">Jugar Pi Snake Ahora 🕹️</a>
+                        <p><small>Haz click para ir a la pantalla del juego.</small></p>
+                    </div>
+
+                    <div id="pi-snake-container" style="margin-top:20px;">
+                        <!-- Si prefieres incrustar el juego aquí, pega el HTML/Canvas del juego dentro de este contenedor -->
+                    </div>
+                </div>
+            </article>
+        </section>
 
         <section id="promo" class="content-section">
             <h2 class="section-title">🎓 Promo ASTHERM 2025-2026</h2>
@@ -236,13 +350,13 @@
                     <h3>¡Lanzamiento Oficial!</h3>
                     <p>Viernes 7 de noviembre</p>
                 </div>
-                
+
                 <p>El <strong>Politécnico Fundación MIR Max Simón</strong> vibró con el espectacular lanzamiento de la promoción 2025-2026, bautizada con el nombre de <strong>ASTHERM</strong>. Fue un evento inolvidable donde todos los estudiantes de sexto grado unieron fuerzas.</p>
-                
+
                 <div class="dato-curioso">
                     <strong>💡 Dato Curioso:</strong> El nombre "ASTHERM" es un homenaje a la querida maestra Esther. Las letras 'STHER' dentro del nombre pertenecen a ella.
                 </div>
-                
+
                 <div class="video-gallery">
                     <h4>🎥 Galería del Evento</h4>
                     <div class="video-grid">

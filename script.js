@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentArea = document.querySelector('.content-area');
     const mainFooter = document.querySelector('.main-footer');
     // NUEVOS ELEMENTOS
-    const floatingNavContainer = document.getElementById('floating-nav-container'); 
+    const floatingNavContainer = document.getElementById('floating-nav-container');
     const navButtons = document.querySelectorAll('.nav-button');
     const contentSections = document.querySelectorAll('.content-section');
     const navToggleButton = document.getElementById('nav-toggle-button');
     const floatingNavButtonsContainer = document.getElementById('floating-nav-buttons');
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
-    
+   
     // =========================================================
     // === LÓGICA DE MODO OSCURO: CARGA INICIAL ===
     // =========================================================
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         darkModeToggle.textContent = '☀️'; // Icono de sol
     }
-    
+   
     // Ocultar contenido principal hasta entrar
     mainHeader.style.display = 'none';
     mainNav.style.display = 'none';
@@ -39,20 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // Mostrar contenido principal
             mainHeader.style.display = 'block';
             // mainNav.style.display ya no es necesario, CSS lo maneja, pero lo dejamos si es necesario para compatibilidad en algunos navegadores
-            mainNav.style.display = 'block'; 
+            mainNav.style.display = 'block';
             contentArea.style.display = 'block';
             mainFooter.style.display = 'block';
-            
+           
             // *** MOSTRAR CONTENEDOR FLOTANTE Y GENERAR BOTONES (NUEVO) ***
             if (floatingNavContainer) {
                 floatingNavContainer.style.display = 'block';
                 generateFloatingNavButtons();
             }
-            
+           
             // *** INICIAR ESCUCHA DE SCROLL DESPUÉS DE ENTRAR ***
             if (mainNav) {
                 // Ya no necesitamos la función handleScroll si el CSS oculta la barra, pero la dejamos por si acaso.
-                window.addEventListener('scroll', handleScroll); 
+                window.addEventListener('scroll', handleScroll);
             }
         }, 500); // 500ms para que termine la transición CSS
     });
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================
     // === LÓGICA DE NAVEGACIÓN POR BOTONES (CENTRALIZADA) ===
     // =========================================================
-    
+   
     // Función centralizada para manejar la activación de secciones y botones
     function activateSection(targetId) {
         // 1. Desactivar todos los botones de ambos menús
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetSection) {
             targetSection.classList.add('active');
         }
-        
+       
         // Al hacer click, sube al principio para que la navegación esté visible
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             activateSection(targetId);
         });
     });
-
 
     // =========================================================
     // === FUNCIONALIDAD: LÓGICA DE MENÚ FLOTANTE ===
@@ -107,28 +106,28 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateFloatingNavButtons() {
         if (!floatingNavButtonsContainer) return;
         floatingNavButtonsContainer.innerHTML = ''; // Limpiar antes de generar
-        
+       
         // Usamos los botones de la barra principal como plantilla
         navButtons.forEach(originalButton => {
             const targetId = originalButton.getAttribute('data-target');
-            
+           
             // Crear una copia del botón
             const floatingButton = originalButton.cloneNode(true);
-            
+           
             // Reemplazar el listener
-            floatingButton.removeEventListener('click', () => {}); 
+            floatingButton.removeEventListener('click', () => {});
 
             floatingButton.addEventListener('click', () => {
                 activateSection(targetId); // Usar la función centralizada
                 floatingNavContainer.classList.remove('open'); // Cerrar el menú después de seleccionar
                 navToggleButton.textContent = '☰';
             });
-            
+           
             // Limpiar clases específicas de la barra principal
             if(floatingButton.classList.contains('highlight')) {
                  floatingButton.classList.remove('highlight');
                  // Mantener un estilo base, si lo desea, se puede personalizar más en CSS
-                 floatingButton.style.backgroundColor = 'var(--accent-color)'; 
+                 floatingButton.style.backgroundColor = 'var(--accent-color)';
             }
 
             floatingNavButtonsContainer.appendChild(floatingButton);
@@ -152,20 +151,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     // =========================================================
     // === LÓGICA DE OCULTAR/MOSTRAR NAVEGACIÓN AL HACER SCROLL (YA NO NECESARIA POR CSS, PERO LA MANTENEMOS) ===
     // =========================================================
     let lastScrollTop = 0;
-    // Umbral de scroll 
-    const scrollThreshold = 100; 
+    // Umbral de scroll
+    const scrollThreshold = 100;
 
     function handleScroll() {
         if (!mainNav || splashScreen.style.display !== 'none') return;
-        
+       
         const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScrollTop > scrollThreshold) { 
+        if (currentScrollTop > scrollThreshold) {
             if (currentScrollTop > lastScrollTop) {
                 // Bajando: Ocultar barra de navegación
                 // mainNav.classList.add('nav-hidden'); // No es necesaria si el CSS oculta la barra
@@ -178,7 +176,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // mainNav.classList.remove('nav-hidden'); // No es necesaria si el CSS oculta la barra
         }
 
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; 
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     }
     // =========================================================
+});
+// Activación de botones del menú (incluye Navidad MIR y Créditos automáticamente)
+document.querySelectorAll('.nav-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+
+        document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
+
+        document.querySelectorAll('.nav-button').forEach(x => x.classList.remove('active'));
+        btn.classList.add('active');
+    });
 });
