@@ -192,3 +192,26 @@ document.querySelectorAll('.nav-button').forEach(btn => {
         btn.classList.add('active');
     });
 });
+// ===============================
+// MODAL PARA VER IMÁGENES GRANDES
+// ===============================
+const modal = document.getElementById("image-modal");
+const modalImg = document.getElementById("modal-img");
+const closeModal = document.querySelector(".close-modal");
+
+document.querySelectorAll(".gallery-image").forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+    });
+});
+
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
